@@ -12,7 +12,7 @@ A simple CMD script that allows you to easily switch between the old style right
 ## How to Use
 
 1. **Download the Script**  
-   Clone the repository or download the `context_menu_switcher.cmd` file directly.
+   Clone the repository or download the `Right Click Menu Enable.bat` file directly.
 
 2. **Run as Administrator**  
    To apply changes, the script needs to be run with administrator privileges.
