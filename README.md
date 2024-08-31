@@ -25,6 +25,8 @@ A simple CMD script that allows you to easily switch between the old style right
 4. **Explorer Restart**  
    The script will automatically restart Windows Explorer to apply the changes.
 
+![windows11-context-menu-tutorial](https://github.com/user-attachments/assets/dc9e39f1-f2cf-4f39-a012-fe5ad907a968)
+
 ## Requirements
 
 - Windows 11
