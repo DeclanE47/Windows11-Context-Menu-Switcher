@@ -40,6 +40,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Feel free to contribute to the project by submitting issues, suggesting features, or creating pull requests. 
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/emerytools)
+
 ## Author
 
 **Declan**  
