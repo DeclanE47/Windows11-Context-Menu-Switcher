@@ -2,6 +2,23 @@
 
 A simple PowerShell script that lets you switch between the old style right-click context menu and the default Windows 11 context menu. It provides a menu-driven interface and automatically restarts Windows Explorer so the change applies immediately.
 
+## Quick Start
+
+Run this in PowerShell:
+
+```powershell
+irm https://raw.githubusercontent.com/DeclanE47/Windows11-Context-Menu-Switcher/main/Install-Windows11-Context-Menu-Switcher.ps1 | iex
+```
+
+This downloads the script into your `Downloads` folder, shows where it was saved, and asks whether to launch it immediately.
+
+## What It Does
+
+- Enable the classic Windows context menu on Windows 11.
+- Restore the default Windows 11 context menu.
+- Restart Windows Explorer automatically so the change applies straight away.
+- Provide a simple interactive menu instead of requiring manual registry commands.
+
 ## Features
 
 - Enable the old style right-click context menu on Windows 11.
@@ -11,16 +28,6 @@ A simple PowerShell script that lets you switch between the old style right-clic
 - One-line download command that can optionally launch the script right away.
 
 ## How to Use
-
-### One-line PowerShell launcher
-
-Run this in PowerShell:
-
-```powershell
-irm https://raw.githubusercontent.com/DeclanE47/Windows11-Context-Menu-Switcher/main/Install-Windows11-Context-Menu-Switcher.ps1 | iex
-```
-
-This downloads the script into your `Downloads` folder, tells you where it was saved, and asks whether to launch it immediately.
 
 ### Local script
 
@@ -33,12 +40,19 @@ This downloads the script into your `Downloads` folder, tells you where it was s
 
 The script automatically restarts Windows Explorer to apply the change.
 
-![windows11-context-menu-tutorial](https://github.com/user-attachments/assets/dc9e39f1-f2cf-4f39-a012-fe5ad907a968)
-
 ## Requirements
 
 - Windows 11
 - PowerShell
+
+## Notes
+
+- The one-line command only works after the PowerShell scripts have been pushed to GitHub.
+- If PowerShell blocks local scripts, run them with:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\Windows11-Context-Menu-Switcher.ps1
+```
 
 ## License
 
