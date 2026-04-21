@@ -47,16 +47,24 @@ The script automatically restarts Windows Explorer to apply the change.
 
 For tools such as Action1, use `Windows11-Context-Menu-Switcher-OneTouch.ps1`.
 
-Enable the classic menu:
+Local examples:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\Windows11-Context-Menu-Switcher-OneTouch.ps1 -Mode Classic
 ```
 
-Restore the default Windows 11 menu:
-
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\Windows11-Context-Menu-Switcher-OneTouch.ps1 -Mode Default
+```
+
+Direct run examples:
+
+```powershell
+& ([scriptblock]::Create((Invoke-RestMethod 'https://raw.githubusercontent.com/DeclanE47/Windows11-Context-Menu-Switcher/main/Windows11-Context-Menu-Switcher-OneTouch.ps1'))) -Mode Classic
+```
+
+```powershell
+& ([scriptblock]::Create((Invoke-RestMethod 'https://raw.githubusercontent.com/DeclanE47/Windows11-Context-Menu-Switcher/main/Windows11-Context-Menu-Switcher-OneTouch.ps1'))) -Mode Default
 ```
 
 This version is non-interactive and is intended for one-click or remote deployment scenarios.
@@ -78,7 +86,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\Enable-Classic-Context-Men
 powershell -NoProfile -ExecutionPolicy Bypass -File .\Restore-Default-Context-Menu.ps1
 ```
 
-Raw GitHub examples after the scripts are pushed:
+Direct run examples:
 
 ```powershell
 irm https://raw.githubusercontent.com/DeclanE47/Windows11-Context-Menu-Switcher/main/Enable-Classic-Context-Menu.ps1 | iex
@@ -90,6 +98,15 @@ irm https://raw.githubusercontent.com/DeclanE47/Windows11-Context-Menu-Switcher/
 
 These are useful for RMM jobs, scheduled tasks, or any deployment flow where you want one script per action.
 
+### Action1 / Remote Run Tip
+
+If your RMM runs a script body directly instead of first placing a `.ps1` file on disk, use either:
+
+- one of the single-purpose scripts directly
+- one of the direct run examples above
+
+Do not use `-File .\SomeScript.ps1` unless that script already exists on the target machine.
+
 ## Requirements
 
 - Windows 11
@@ -97,8 +114,6 @@ These are useful for RMM jobs, scheduled tasks, or any deployment flow where you
 
 ## Notes
 
-- The one-line command only works after the PowerShell scripts have been pushed to GitHub.
-- The raw GitHub examples for the single-purpose scripts also only work after those files have been pushed to GitHub.
 - If PowerShell blocks local scripts, run them with:
 
 ```powershell
