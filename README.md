@@ -68,6 +68,7 @@ Direct run examples:
 ```
 
 This version is non-interactive and is intended for one-click or remote deployment scenarios.
+When run by an RMM under `SYSTEM`, it applies the change to loaded user profiles instead of the `SYSTEM` profile.
 
 ### Single-purpose scripts
 
@@ -106,6 +107,7 @@ If your RMM runs a script body directly instead of first placing a `.ps1` file o
 - one of the direct run examples above
 
 Do not use `-File .\SomeScript.ps1` unless that script already exists on the target machine.
+If Explorer does not refresh the menu immediately in a remote session, sign out and back in once.
 
 ## Requirements
 
