@@ -18,6 +18,7 @@ This downloads the script into your `Downloads` folder, shows where it was saved
 - Restore the default Windows 11 context menu.
 - Restart Windows Explorer automatically so the change applies straight away.
 - Provide a simple interactive menu instead of requiring manual registry commands.
+- Offer interactive, parameterized, and single-purpose deployment options.
 
 ## Features
 
@@ -26,6 +27,8 @@ This downloads the script into your `Downloads` folder, shows where it was saved
 - Automatically restarts Windows Explorer to apply changes.
 - Easy-to-use menu interface.
 - One-line download command that can optionally launch the script right away.
+- Unattended one-touch PowerShell script for RMM tools such as Action1.
+- Dedicated enable/restore scripts for single-action deployment jobs.
 
 ## How to Use
 
@@ -40,6 +43,53 @@ This downloads the script into your `Downloads` folder, shows where it was saved
 
 The script automatically restarts Windows Explorer to apply the change.
 
+### One-touch / RMM script
+
+For tools such as Action1, use `Windows11-Context-Menu-Switcher-OneTouch.ps1`.
+
+Enable the classic menu:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\Windows11-Context-Menu-Switcher-OneTouch.ps1 -Mode Classic
+```
+
+Restore the default Windows 11 menu:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\Windows11-Context-Menu-Switcher-OneTouch.ps1 -Mode Default
+```
+
+This version is non-interactive and is intended for one-click or remote deployment scenarios.
+
+### Single-purpose scripts
+
+If you want separate scripts with no parameters, use:
+
+- `Enable-Classic-Context-Menu.ps1`
+- `Restore-Default-Context-Menu.ps1`
+
+Local examples:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\Enable-Classic-Context-Menu.ps1
+```
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\Restore-Default-Context-Menu.ps1
+```
+
+Raw GitHub examples after the scripts are pushed:
+
+```powershell
+irm https://raw.githubusercontent.com/DeclanE47/Windows11-Context-Menu-Switcher/main/Enable-Classic-Context-Menu.ps1 | iex
+```
+
+```powershell
+irm https://raw.githubusercontent.com/DeclanE47/Windows11-Context-Menu-Switcher/main/Restore-Default-Context-Menu.ps1 | iex
+```
+
+These are useful for RMM jobs, scheduled tasks, or any deployment flow where you want one script per action.
+
 ## Requirements
 
 - Windows 11
@@ -48,6 +98,7 @@ The script automatically restarts Windows Explorer to apply the change.
 ## Notes
 
 - The one-line command only works after the PowerShell scripts have been pushed to GitHub.
+- The raw GitHub examples for the single-purpose scripts also only work after those files have been pushed to GitHub.
 - If PowerShell blocks local scripts, run them with:
 
 ```powershell
